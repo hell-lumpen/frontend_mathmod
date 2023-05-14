@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import logo from './logo.png';
+import example from './example.jpg';
+import mts_logo from './mts_logo.png';
 
 function App() {
+  const [imageUrl, setImageUrl] = useState(null);
+
+  const handleButtonClick = () => {
+    fetch('https://via.placeholder.com/500x500.png/000000/FFFFFF')
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        setTimeout(() => setImageUrl(url), 5000);
+      });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="logo-container">
+        <img src={logo} alt="mts_logo" className="logo" />
+        <img src={mts_logo} alt="it_raby" className="mts_logo" />
+      </div>
+      <h1 className="title">Заказ беспилотника для фотосъемки</h1>
+      <div className="image-container">
+        {imageUrl ? (
+          <img src={imageUrl} alt="Результат съемки" className="image" />
+        ) : <img src={example} alt="Результат съемки" className="image" />}
+      </div>
+      <button className="button" onClick={handleButtonClick}>
+        Заказать беспилотник
+      </button>
     </div>
   );
 }
