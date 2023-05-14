@@ -6,13 +6,13 @@ import mts_logo from './mts_logo.png';
 
 function App() {
   const [imageUrl, setImageUrl] = useState(null);
-
+  
   const handleButtonClick = () => {
     fetch('https://via.placeholder.com/500x500.png/000000/FFFFFF')
       .then((response) => response.blob())
       .then((blob) => {
         const url = URL.createObjectURL(blob);
-        setTimeout(() => setImageUrl(url), 5000);
+        setImageUrl(url);
       });
   };
 
@@ -24,9 +24,7 @@ function App() {
       </div>
       <h1 className="title">Заказ беспилотника для фотосъемки</h1>
       <div className="image-container">
-        {imageUrl ? (
-          <img src={imageUrl} alt="Результат съемки" className="image" />
-        ) : <img src={example} alt="Результат съемки" className="image" />}
+         <img src={imageUrl || example} alt="Результат съемки" className="image" />
       </div>
       <button className="button" onClick={handleButtonClick}>
         Заказать беспилотник
