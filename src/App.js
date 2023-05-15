@@ -27,7 +27,7 @@ function App() {
          <img src={imageUrl || example} alt="Результат съемки" className="image" />
       </div>
       <button className="button" onClick={handleButtonClick}>
-        Заказать беспилотник
+        Начать съемку
       </button>
     </div>
   );
