@@ -14,7 +14,10 @@ body {
   padding: 0;
 }
 
-.title {
+.drone-text-h {
+  font-family: 'MTSSans-Regular', sans-serif;
+  font-size: 30px;
+  color: black;
   margin-top: 2rem;
   text-align: center;
 }
@@ -72,5 +75,11 @@ body {
   height: 100%;
 }
 
-
-
+.drone-text {
+  background-color: white;
+  font-family: 'MTSSans-Regular', sans-serif;
+  font-size: 30px;
+  color: black;
+  margin: 0;
+  padding: 0;
+}

@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import logo from './logo.png';
 import mts_logo from './mts_logo.png';
 import VideoPlayer from './VideoPlayer';
 
-
 function App() {
   const [imageUrl, setImageUrl] = useState(null);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowButton(true);
+    }, 10000);
+  }, []);
 
   const handleButtonClick = () => {
     fetch('https://via.placeholder.com/500x500.png/000000/FFFFFF', { mode: 'no-cors' })
@@ -24,7 +30,7 @@ function App() {
         <img src={mts_logo} alt="it_raby" className="mts_logo" />
       </div>
 
-      <h1 className="title">Заказ беспилотника для фотосъемки</h1>
+      <div className="drone-text-h">Заказ беспилотника для фотосъемки</div>
 
       {imageUrl ? (
         <img src={imageUrl} alt="resulting_image" className="resulting-image" />
@@ -32,9 +38,15 @@ function App() {
         <VideoPlayer videoId="bxynzesjB6E" />
       )}
 
-      <button className="button" onClick={handleButtonClick}>
-        Дрон в пути...
-      </button>
+      {showButton ? (
+        <button className="button" onClick={handleButtonClick}>
+          Take a photo
+        </button>
+      ) : (
+        <p className="drone-text">
+          Drone on the way. Wait a few minutes
+        </p>
+      )}
     </div>
   );
 }
