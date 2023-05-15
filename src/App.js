@@ -30,7 +30,7 @@ function App() {
         <img src={mts_logo} alt="it_raby" className="mts_logo" />
       </div>
 
-      <div className="drone-text-h">Заказ беспилотника для фотосъемки</div>
+      <div className="title">Заказ беспилотника для фотосъемки</div>
 
       {imageUrl ? (
         <img src={imageUrl} alt="resulting_image" className="resulting-image" />
@@ -40,12 +40,12 @@ function App() {
 
       {showButton ? (
         <button className="button" onClick={handleButtonClick}>
-          Take a photo
+          Сделать фото
         </button>
       ) : (
-        <p className="drone-text">
-          Drone on the way. Wait a few minutes
-        </p>
+        <div className="text">
+          Дрон в пути... Подожди несколько минут
+        </div>
       )}
     </div>
   );

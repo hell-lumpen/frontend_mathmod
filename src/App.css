@@ -14,13 +14,35 @@ body {
   padding: 0;
 }
 
-.drone-text-h {
-  font-family: 'MTSSans-Regular', sans-serif;
-  font-size: 30px;
-  color: black;
-  margin-top: 2rem;
-  text-align: center;
+@font-face {
+  font-family: 'MTSWide-Regular';
+  src: url('fonts/MTSWide-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
+
+
+@font-face {
+  font-family: 'MTSUltraExtended-Bold';
+  src: url('fonts/MTSUltraExtended-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+.title {
+  font-family: 'MTSUltraExtended-Bold', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.text {
+  font-family: 'MTSWide-Regular', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+}
+
+
 
 .image-container {
   width: 100%;
@@ -39,8 +61,10 @@ body {
   width: 90%;
   max-width: 400px;
   background-color: #e40422;
-  color: #fff;
-  font-size: 18px;
+  color: #000;
+  font-family: 'MTSUltraExtended-Bold', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -64,7 +88,7 @@ body {
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+  padding-bottom: 56.25%;
 }
 
 .video-container iframe {
@@ -73,13 +97,4 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.drone-text {
-  background-color: white;
-  font-family: 'MTSSans-Regular', sans-serif;
-  font-size: 30px;
-  color: black;
-  margin: 0;
-  padding: 0;
 }
