@@ -144,3 +144,8 @@ a:hover {
   color: #e40422; /* Замените на цвет, который вы предпочитаете при наведении */
   text-decoration: underline;
 }
+
+.stream-container {
+  display: flex;
+  align-items: center;
+}
