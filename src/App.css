@@ -136,7 +136,7 @@ a {
   font-family: 'MTSWide-Regular', sans-serif;
   font-size: 20px;
   padding: 10px;
-  text-decoration: none;
+  text-decoration: underline;
   color: #000; /* Замените на цвет, который вы предпочитаете */
 }
 
