@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
+import VideoPlayer from './VideoPlayer';
 
 const Livestream = () => {
   const videoRef = useRef(null);
@@ -24,7 +25,7 @@ const Livestream = () => {
   }, []);
 
   if (!Hls.isSupported()) {
-    return <p>Стрим не поддерживается</p>;
+    return <VideoPlayer videoId="bxynzesjB6E" />;
   }
 
   return <video ref={videoRef} style={{ width: '100%' }} controls />;
