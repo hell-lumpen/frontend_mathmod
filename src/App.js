@@ -69,6 +69,7 @@ function App() {
         </div>
       ) : (
         <div>
+          <Livestream />
           {showButton ? (
             <div>
               <VideoPlayer videoId="bxynzesjB6E" />
