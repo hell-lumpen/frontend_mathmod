@@ -61,7 +61,7 @@ function App() {
       {imageUrl ? (
         <div>
           <div className="text">Ваше фото готово!</div>
-          <a href='https://app.airdata.com/share/QCJCoP/MEDIAMedia_Manager'>Посмотреть фото</a>
+          <a href='https://app.airdata.com/share/VTyOiy'>Посмотреть фото</a>
           <div className="button-container">
             <button className="button" onClick={handleSuccessButtonClick}>
               Перейти к оплате
