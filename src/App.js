@@ -73,7 +73,6 @@ function App() {
           <Livestream />
           {showButton ? (
             <div>
-              <VideoPlayer videoId="bxynzesjB6E" />
               <div className="text">
                 Приготовьтесь, вас снимают!
               </div>
@@ -83,7 +82,6 @@ function App() {
             </div>
           ) : (
             <div>
-              <VideoPlayer videoId="bxynzesjB6E" />
               <div className="text">
                 Дрон в пути...
                 <br />
