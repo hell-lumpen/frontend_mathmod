@@ -26,15 +26,19 @@ function App() {
   }, []);
 
   const handleButtonClick = () => {
-    axios
-      .get(
-        'https://images.unsplash.com/photo-1677869457675-47ff2192ebdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
-        { responseType: 'blob' }
-      )
-      .then(response => {
-        const url = URL.createObjectURL(response.data);
-        setImageUrl(url);
-      });
+    setImageUrl(1);
+    // const corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    // const imageUrl = 'https://app.airdata.com/share_photo?share=QCJCoP&picname=0000057196-photo.jpg';
+
+    // axios
+    //   .get(corsProxyUrl + imageUrl, { responseType: 'blob' })
+    //   .then(response => {
+    //     const url = URL.createObjectURL(response.data);
+    //     setImageUrl(url);
+    //   })
+    //   .catch(error => {
+    //     console.error(error);
+    //   });
   };
 
   const handleSuccessButtonClick = () => {
@@ -54,10 +58,11 @@ function App() {
   
       {imageUrl ? (
         <div>
-          <div className="image-container">
+          {/* <div className="image-container">
             <img src={imageUrl} alt="resulting_image" className="resulting-image" />
-          </div>
+          </div> */}
           <div className="text">Ваше фото готово!</div>
+          <a href='https://app.airdata.com/share/QCJCoP/MEDIAMedia_Manager'>Посмотреть фото</a>
           <button className="button" onClick={handleSuccessButtonClick}>
             Перейти к оплате
           </button>

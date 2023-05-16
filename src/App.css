@@ -131,3 +131,16 @@
   flex-shrink: 0; /* добавляем свойство flex-shrink */
   max-width: 100%; /* добавляем свойство max-width */
 }
+
+a {
+  font-family: 'MTSWide-Regular', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: #000; /* Замените на цвет, который вы предпочитаете */
+}
+
+a:hover {
+  color: #e40422; /* Замените на цвет, который вы предпочитаете при наведении */
+  text-decoration: underline;
+}
