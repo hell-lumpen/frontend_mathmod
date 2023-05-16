@@ -9,7 +9,7 @@ const Livestream = () => {
     const hls = new Hls();
 
     if (Hls.isSupported()) {
-      hls.loadSource('https://filimonov.org/hls/stream.m3u8'); // Replace with your M3U8 URL
+      hls.loadSource('https://filimonov.org/hls/stream.m3u8'); // Замените на ваш URL M3U8
       hls.attachMedia(videoElement);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
         videoElement.play();
@@ -22,6 +22,10 @@ const Livestream = () => {
       }
     };
   }, []);
+
+  if (!Hls.isSupported()) {
+    return <p>Стрим не поддерживается</p>;
+  }
 
   return <video ref={videoRef} style={{ width: '100%' }} controls />;
 };
