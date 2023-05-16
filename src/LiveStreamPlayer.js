@@ -9,7 +9,7 @@ const Livestream = () => {
     const hls = new Hls();
 
     if (Hls.isSupported()) {
-      hls.loadSource('https://filimonov.org/dash/stream.mpd'); // Replace with your M3U8 URL
+      hls.loadSource('https://filimonov.org/hls/stream.m3u8'); // Replace with your M3U8 URL
       hls.attachMedia(videoElement);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
         videoElement.play();
