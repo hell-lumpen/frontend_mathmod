@@ -38,7 +38,9 @@ function App() {
   };
 
   const handleSuccessButtonClick = () => {
-    // Действия при успешном нажатии кнопки
+    setImageUrl(null);
+    setTimer(-1);
+    setShowButton(false);
   };
 
   return (
@@ -88,7 +90,6 @@ function App() {
       )}
     </div>
   );
-  
 }
 
 export default App;
