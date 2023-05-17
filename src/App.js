@@ -61,7 +61,7 @@ function App() {
       {imageUrl ? (
         <div>
           <div className="text">Ваше фото готово!</div>
-          <a href=''>Посмотреть фото</a>
+          <a href={imageLink}>Посмотреть фото</a>
           <div className="button-container">
             <button className="button" onClick={handleSuccessButtonClick}>
               Перейти к оплате
