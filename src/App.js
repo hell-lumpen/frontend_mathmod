@@ -11,6 +11,8 @@ function App() {
   const [showButton, setShowButton] = useState(false);
   const [timer, setTimer] = useState(10);
 
+  const imageLink = 'https://app.airdata.com/share/VTyOiy';
+
   useEffect(() => {
     const countdown = setInterval(() => {
       setTimer(prevTimer => prevTimer - 1);
@@ -43,10 +45,8 @@ function App() {
   };
 
   const handleSuccessButtonClick = () => {
-    setImageUrl(null);
-    setTimer(-1);
-    setShowButton(false);
-    window.location.reload(); // Reload the application
+    const redirectUrl = 'https://drgnf.tech/?image=' + encodeURIComponent(imageLink);
+    window.location.href = redirectUrl;
   };
 
   return (
@@ -61,7 +61,7 @@ function App() {
       {imageUrl ? (
         <div>
           <div className="text">Ваше фото готово!</div>
-          <a href='https://app.airdata.com/share/VTyOiy'>Посмотреть фото</a>
+          <a href=''>Посмотреть фото</a>
           <div className="button-container">
             <button className="button" onClick={handleSuccessButtonClick}>
               Перейти к оплате
